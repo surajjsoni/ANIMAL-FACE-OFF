@@ -1,0 +1,5 @@
+{
+  "name": "Animal Battle Predictor",
+  "description": "An AI-powered simulator that predicts the outcome of a hypothetical battle between two animals, providing probabilities and detailed tactical analysis.",
+  "requestFramePermissions": []
+}

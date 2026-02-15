@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMAL FACE OFF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #030408;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Neon Glow Text */
+        .neon-text-purple {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.8), 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+        
+        /* Glowing Button Class */
+        .glow-btn {
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.4);
+        }
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.8);
+            transform: translateY(-2px);
+        }
+        .glow-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Rainbow Sparkling Border Animation for Fixed Button */
+        @keyframes rainbow-sparkle {
+            0% { border-color: #ff0000; box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
+            20% { border-color: #ffff00; box-shadow: 0 0 25px rgba(255, 255, 0, 0.7); }
+            40% { border-color: #00ff00; box-shadow: 0 0 25px rgba(0, 255, 0, 0.7); }
+            60% { border-color: #00ffff; box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); }
+            80% { border-color: #ff00ff; box-shadow: 0 0 25px rgba(255, 0, 255, 0.7); }
+            100% { border-color: #ff0000; box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
+        }
+
+        .rainbow-sparkle-btn {
+            animation: rainbow-sparkle 4s linear infinite;
+            border-width: 3px;
+            background: #0a0b14;
+        }
+
+        @keyframes sparkle-text {
+            0%, 100% { text-shadow: 0 0 10px #fff, 0 0 20px #a855f7; color: #fff; }
+            50% { text-shadow: 0 0 15px #fff, 0 0 40px #a855f7; color: #f3e8ff; }
+        }
+
+        .sparkle-font {
+            animation: sparkle-text 2s infinite alternate;
+        }
+
+        /* Stat Bar Animations */
+        @keyframes shine {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-shine::after {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; width: 50%; height: 100%;
+          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+          animation: shine 1.5s infinite linear;
+        }
+
+        @keyframes sonar-pulse {
+          0% { transform: scale(1); opacity: 0.8; }
+          100% { transform: scale(2.5); opacity: 0; }
+        }
+        .pulse-ring-rainbow {
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          border: 2px solid rgba(168, 85, 247, 0.5);
+          animation: sonar-pulse 2.5s infinite ease-out;
+          pointer-events: none;
+        }
+
+        .bar-fill {
+          transition: width 1.5s cubic-bezier(0.17, 0.84, 0.44, 1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0b14; }
+        ::-webkit-scrollbar-thumb { background: #1e1b4b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #312e81; }
+
+        .glass-panel {
+            background: rgba(15, 17, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
